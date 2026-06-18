@@ -2,6 +2,10 @@
 
 一个适合手机竖屏玩的轻量 Canvas 小游戏：在小厨房里取鹅腿或鸭腿，烤熟、贴对标签，根据订单决定是否蘸秘制绿汁，然后出餐。
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="鹅鸭小厨房游戏截图" width="320" />
+</p>
+
 ## 在线试玩
 
 [https://goose-duck-kitchen.netlify.app/](https://goose-duck-kitchen.netlify.app/)
@@ -74,23 +78,3 @@ QA_SCREENSHOT_MODE=abstract npm run qa:mobile
 `assets/raw/`、`assets/concepts/`、`.netlify/`、`node_modules/` 等目录属于本地生成或工具状态，不包含在开源包中。
 
 `demo/goose-duck-kitchen-demo.mp4` 是有意包含的演示视频，随项目按 MIT License 授权。
-
-## 开源前检查
-
-正式公开或打包前，建议确认：
-
-- 没有提交 `.env` 文件。
-- 没有提交 API key、token 或私有中转配置。
-- 没有提交 `.netlify/`。
-- 没有提交 `node_modules/`。
-- 没有提交 `assets/raw/` 或 `assets/concepts/`。
-- `demo/goose-duck-kitchen-demo.mp4` 是预期保留的演示文件。
-
-可以用下面的命令做一次简单检查：
-
-```bash
-rg -n "sk-|api[_-]?key|TOKEN|secret|Authorization|Bearer" . \
-  -g '!node_modules/**' \
-  -g '!package-lock.json' \
-  -g '!assets/game/*.png'
-```
