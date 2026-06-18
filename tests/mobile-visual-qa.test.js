@@ -25,8 +25,8 @@ test("mobile visual QA script covers the required mobile duck flow contract", as
   assert.match(script, /QA_SCREENSHOT_MODE/);
   assert.ok(script.includes('const mode = process.env.QA_SCREENSHOT_MODE?.trim() || "abstract";'));
   assert.match(script, /Visual QA checkpoints/);
-  assert.ok(script.includes("return `/tmp/etui-${mode}-public-${width}x${height}.png`;"));
-  assert.ok(script.includes("return `/tmp/etui-${mode}-${width}x${height}.png`;"));
+  assert.ok(script.includes("return `/tmp/goose-duck-kitchen-${mode}-public-${width}x${height}.png`;"));
+  assert.ok(script.includes("return `/tmp/goose-duck-kitchen-${mode}-${width}x${height}.png`;"));
   assert.match(script, /score <= 0/);
   assert.match(script, /console/);
   assert.match(script, /requestfailed/);

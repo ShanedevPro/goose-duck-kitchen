@@ -223,10 +223,10 @@ function getScreenshotPath(width, height, isPublicMode) {
   const mode = process.env.QA_SCREENSHOT_MODE?.trim() || "abstract";
 
   if (isPublicMode) {
-    return `/tmp/etui-${mode}-public-${width}x${height}.png`;
+    return `/tmp/goose-duck-kitchen-${mode}-public-${width}x${height}.png`;
   }
 
-  return `/tmp/etui-${mode}-${width}x${height}.png`;
+  return `/tmp/goose-duck-kitchen-${mode}-${width}x${height}.png`;
 }
 
 function shouldIgnoreRequestFailure(rawUrl) {
