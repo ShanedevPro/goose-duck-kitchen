@@ -1,0 +1,26 @@
+{
+  "name": "goose-duck-kitchen",
+  "version": "0.1.0",
+  "description": "一个关于鹅腿、鸭腿、贴标签和秘制绿汁的移动端 Canvas 小游戏。",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "serve": "python3 -m http.server 4173",
+    "assets:sheet": "node scripts/generate-mobile-asset-sheet.mjs",
+    "assets:split": "node scripts/split-mobile-asset-sheet.mjs",
+    "assets:premium": "node scripts/generate-premium-mobile-art.mjs",
+    "assets:premium:prepare": "node scripts/prepare-premium-mobile-art.mjs",
+    "qa:mobile": "node scripts/mobile-visual-qa.mjs",
+    "check": "npm test && node --check src/app.js && node --check src/render.js && node --check src/game.js && node --check src/abstract-visuals.js && node --check scripts/generate-premium-mobile-art.mjs && node --check scripts/prepare-premium-mobile-art.mjs && node --check scripts/mobile-visual-qa.mjs",
+    "deploy:netlify": "npx netlify-cli deploy --dir=. --prod"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0",
+    "sharp": "^0.35.0"
+  }
+}

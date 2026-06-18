@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="一个关于真实原料、快速烹饪和如实贴标签的轻量网页小游戏。"
+    />
+    <title>鹅鸭小厨房</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="phone-frame" id="gamePanel" aria-label="鹅鸭小厨房游戏">
+        <header class="top-hud" aria-label="游戏状态">
+          <div class="hud-pill">
+            <span id="score">0</span>
+            <small>分</small>
+          </div>
+          <div class="hud-pill">
+            <span id="trust">80</span>
+            <small>信誉</small>
+          </div>
+          <div class="hud-pill">
+            <span id="timer">90</span>
+            <small>秒</small>
+          </div>
+          <button class="restart-button" id="restartButton" type="button" aria-label="重开">重开</button>
+        </header>
+
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="540" height="960" aria-label="厨房操作区"></canvas>
+        </div>
+
+        <section class="bottom-dock" aria-label="订单和操作提示">
+          <section class="order-strip" id="orderRail" aria-label="当前订单"></section>
+
+          <section class="hint-bar" aria-label="操作提示">
+            <div>
+              <small>当前</small>
+              <strong id="currentHint">空手</strong>
+            </div>
+            <div>
+              <small>下一步</small>
+              <strong id="nextHint">点鹅柜或鸭柜</strong>
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section class="overlay visible" id="overlay" aria-label="游戏菜单">
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+          <h1 id="overlayTitle">鹅鸭小厨房</h1>
+          <p id="overlayDetail">点台面移动。烤熟，贴对标，出餐。</p>
+          <button id="startButton" type="button">开始营业</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
